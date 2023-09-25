@@ -1,6 +1,5 @@
+import { MOCK_SERVER_URL } from '@constants/api';
 import { rest, RequestHandler } from 'msw';
-
-const MOCK_SERVER_URL = 'http://localhost:8080';
 
 const testHandlers: RequestHandler[] = [
   rest.get(`${MOCK_SERVER_URL}/test`, (_, res, ctx) => {
