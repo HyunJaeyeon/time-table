@@ -1,7 +1,7 @@
 import { setupWorker } from 'msw';
 
-import { testHandlers } from './handlers';
+import { majorHandlers, testHandlers } from './handlers';
 
-const worker = setupWorker(...testHandlers);
+const worker = setupWorker(...testHandlers, ...majorHandlers);
 
 export default worker;
