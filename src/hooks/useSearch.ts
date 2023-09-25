@@ -1,11 +1,11 @@
-import getAxiosIntange from '@apis/axios-instance';
+import getAxiosInstance from '@apis/axios-instance';
 import HttpClient from '@apis/http';
 import { MOCK_SERVER_URL } from '@constants/api';
 import { useEffect, useState } from 'react';
 
 import useDebounce from './useDebounce';
 
-const axiosInstance = getAxiosIntange(MOCK_SERVER_URL);
+const axiosInstance = getAxiosInstance(MOCK_SERVER_URL);
 const httpClient = new HttpClient(axiosInstance);
 
 const useSearch = (keyword: string, endPoint: string, delayTime: number) => {

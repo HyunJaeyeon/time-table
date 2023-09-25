@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const getAxiosIntange = (baseURL: string) => {
+const getAxiosInstance = (baseURL: string) => {
   return axios.create({
     baseURL,
     headers: {
@@ -9,4 +9,4 @@ const getAxiosIntange = (baseURL: string) => {
   });
 };
 
-export default getAxiosIntange;
+export default getAxiosInstance;
