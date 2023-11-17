@@ -1,4 +1,4 @@
-import React, { CSSProperties } from 'react';
+import { CSSProperties } from 'react';
 import styled from 'styled-components';
 
 interface CustomButton {
@@ -41,10 +41,9 @@ const StyledButton = styled.button<styledButtonProps>`
   font-family: Galmuri11;
   width: 100%;
   height: 100%;
-  font-size: 16px
+  font-size: 16px;
   background-color: ${(props) => props.boxColor};
   color: ${(props) => props.color};
-
 `;
 
 const ParentContainer = styled.div<{ width: CSSProperties['width'] }>`
