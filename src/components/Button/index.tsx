@@ -23,11 +23,12 @@ const Button = (props: ButtonProps) => {
   const { children, backgroundColor, width, color } = button;
 
   return (
-    <ParentContainer width={width}>
+    <ButtonContainer width={width}>
       <StyledButton boxColor={backgroundColor} color={color}>
         {children}
       </StyledButton>
-    </ParentContainer>
+      <Shadow width={width}></Shadow>
+    </ButtonContainer>
   );
 };
 
@@ -39,20 +40,36 @@ const StyledButton = styled.button<styledButtonProps>`
   border-radius: 5px;
   cursor: pointer;
   font-family: Galmuri11;
+  font-weight: bold;
   width: 100%;
   height: 100%;
   font-size: 16px;
   background-color: ${(props) => props.boxColor};
   color: ${(props) => props.color};
+  z-index: 1;
+  position: absolute;
 `;
 
-const ParentContainer = styled.div<{ width: CSSProperties['width'] }>`
-  box-shadow: 5px 5px 0px #ffbb00;
-  width: ${(props) => props.width};
-  height: 100%;
+const Shadow = styled.div<{ width: CSSProperties['width'] }>`
+  border: 2px solid black;
   border-radius: 5px;
+  height: 52px;
+  background-color: #ffbb00;
+  width: ${(props) => props.width};
+  position: absolute;
+  top: 5px;
+  left: 5px;
+`;
+const ButtonContainer = styled.div<{ width: CSSProperties['width'] }>`
+  width: ${(props) => props.width};
+  height: 52px;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 5em;
   &:active {
-    box-shadow: none;
     transform: translate(6px, 6px);
+    ${Shadow} {
+      display: none;
+    }
   }
 `;
