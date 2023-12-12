@@ -30,8 +30,8 @@ const SavePage = () => {
   return (
     <MainWrapper>
       <NoticeBox>
-        <p>학년 학기</p>
-        <h5>전공</h5>
+        <p>3학년 1학기</p>
+        <h5>컴퓨터공학전공</h5>
       </NoticeBox>
       <StyledOption>
         <OptionBar></OptionBar>
