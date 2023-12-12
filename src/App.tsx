@@ -2,19 +2,19 @@ import Ballon from '@components/Ballon';
 import Credits from '@components/Credits';
 import OptionBar from '@components/OptionBar';
 import SubSelect from '@components/Select/subjectSelect';
-import CreditInputPage from '@pages/CreditInputPage';
 import FirstPage from '@pages/FirstPage';
-import MainPage from '@pages/FirstPage';
-import SubjectPage from '@pages/SubjectPage';
+import FourthPage from '@pages/FourthPage';
+import CreditInputPage from '@pages/SecondPage';
+import SubjectPage from '@pages/ThirdPage';
 import styled from 'styled-components';
 
 const App = () => {
   return (
     <Wrapper>
       {/* <FirstPage></FirstPage>
-<CreditInputPage></CreditInputPage> */}
-      {/* <SubjectPage></SubjectPage> */}
-      <SubSelect></SubSelect>
+      <CreditInputPage></CreditInputPage>
+      <SubjectPage></SubjectPage> */}
+      <FourthPage></FourthPage>
     </Wrapper>
   );
 };

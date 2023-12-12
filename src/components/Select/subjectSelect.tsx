@@ -41,7 +41,7 @@ const Container = styled.section`
 const StyledBox = styled.li`
   position: relative;
   height: 20px;
-  width: 280px;
+  width: 240px;
   font-family: Noto Sans KR;
   font-size: 14px;
   font-style: normal;
@@ -57,7 +57,9 @@ const StyledBox = styled.li`
 
   div {
     position: relative;
-    right: 10px;
+    right: 10;
+    width: 20px;
+    height: 20px;
   }
 `;
 
@@ -74,6 +76,11 @@ const SubSelect = () => {
       professor: selectedProfessor,
     };
     setSelectedOptions([...selectedOptions, newSelection]);
+  };
+  const handleRemoveOption = (index: number) => {
+    const newOptions = [...selectedOptions];
+    newOptions.splice(index, 1);
+    setSelectedOptions(newOptions);
   };
   return (
     <Container>
@@ -102,7 +109,7 @@ const SubSelect = () => {
             {selectedOptions.map((option, index) => (
               <StyledBox key={index}>
                 {`${option.subject} / ${option.professor}`}
-                <div>X</div>
+                <div onClick={() => handleRemoveOption(index)}>X</div>
               </StyledBox>
             ))}
           </ul>

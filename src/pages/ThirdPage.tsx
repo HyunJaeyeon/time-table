@@ -1,6 +1,8 @@
+import Ballon from '@components/Ballon';
 import Button from '@components/Button';
 import { ComboBox } from '@components/index';
 import PageHeader from '@components/PageHeader';
+import SubSelect from '@components/Select/subjectSelect';
 import { MOCK_API_PATH } from '@constants/api';
 import PLACEHOLDER from '@constants/placeholder';
 import { THEME } from '@styles/index';
@@ -8,28 +10,20 @@ import { useRef } from 'react';
 import styled from 'styled-components';
 
 const SubjectPage = () => {
-  const inputRef = useRef<HTMLInputElement>(null);
-  const handleSubjectSelect = (value: string) => {
-    if (inputRef.current) inputRef.current.value = value;
-  };
   return (
     <MainWrapper>
       <PageHeader totalPages={4} currentPage={3}></PageHeader>
       <NoticeBox>
         <p>이번 학기에</p>
         <p>듣고 싶은 과목을</p>
-        <p>선택해주세요</p>z
+        <p>선택해주세요</p>
       </NoticeBox>
       <ComboBoxWrapper>
-        <ComboBox
-          inputRef={inputRef}
-          placeHolderText={PLACEHOLDER.SELECT_MAJOR}
-          endPoint={MOCK_API_PATH.SUBJECT}
-          formatKey="subject"
-          onSelect={handleSubjectSelect}
-        ></ComboBox>
+        <SubSelect></SubSelect>
       </ComboBoxWrapper>
-
+      <CharacterBox>
+        <Ballon messege="무슨 과목 들을거야?"></Ballon>
+      </CharacterBox>
       <ButtonWrapper>
         <Button
           button={{
@@ -88,7 +82,11 @@ const ComboBoxWrapper = styled.div`
   align-items: center;
   z-index: 3;
   position: relative;
-  top: 100px;
+  top: 150px;
   left: 30px;
+`;
+const CharacterBox = styled.div`
+  position: absolute;
+  top: 400px;
 `;
 export default SubjectPage;
