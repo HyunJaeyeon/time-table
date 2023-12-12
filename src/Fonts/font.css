@@ -1,0 +1,19 @@
+@font-face {
+    font-family: "Galmuri11";
+    font-style: normal;
+    font-weight: 700;
+    src: url("./Galmuri11-Bold.woff2") format("woff2");
+  }
+  
+@font-face {
+    font-family: "Galmuri11";
+    font-style: normal;
+    font-weight: 100;
+    src: url("./Galmuri11.woff2") format("woff2");
+  }
+@font-face {
+    font-family: "Galmuri11";
+    font-style: normal;
+    font-weight: 100;
+    src: url("./Galmuri11.ttf") format("ttf");
+  }
