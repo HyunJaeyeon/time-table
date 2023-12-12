@@ -2,6 +2,7 @@ import Ballon from '@components/Ballon';
 import Button from '@components/Button';
 import Credits from '@components/Credits';
 import PageHeader from '@components/PageHeader';
+import TimeChecker from '@components/TimeChecker';
 import { THEME } from '@styles/index';
 import styled from 'styled-components';
 
@@ -14,6 +15,9 @@ const FourthPage = () => {
         <p>터치&드래그 해주세요</p>
         <h5>원하는 시간만큼 쭉 잡아당기면 돼요</h5>
       </NoticeBox>
+      <StyldeTimeChecker>
+        <TimeChecker></TimeChecker>
+      </StyldeTimeChecker>
 
       <ButtonWrapper>
         <Button
@@ -71,10 +75,9 @@ const ButtonWrapper = styled.div`
   position: absolute;
   top: 700px;
 `;
-const Wrapper = styled.div`
+const StyldeTimeChecker = styled.div`
   position: relative;
-  left: 12px;
-  top: 180px;
+  top: 140px;
 `;
 
 export default FourthPage;
