@@ -2,6 +2,7 @@ import Ballon from '@components/Ballon';
 import Credits from '@components/Credits';
 import OptionBar from '@components/OptionBar';
 import SubSelect from '@components/Select/subjectSelect';
+import TimeTable from '@components/TimeTable';
 import FirstPage from '@pages/FirstPage';
 import FourthPage from '@pages/FourthPage';
 import CreditInputPage from '@pages/SecondPage';
@@ -14,7 +15,8 @@ const App = () => {
       {/* <FirstPage></FirstPage>
       <CreditInputPage></CreditInputPage>
       <SubjectPage></SubjectPage> */}
-      <FourthPage></FourthPage>
+      {/* <FourthPage></FourthPage> */}
+      <TimeTable />
     </Wrapper>
   );
 };
