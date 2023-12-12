@@ -6,7 +6,7 @@ interface TimeColumnProps {
   day: string;
 }
 const Cell = styled.td`
-  background-color: #fff;
+  background-color: #ffffff;
   border: 0.7px solid #b5b5b5;
   flex-shrink: 0px;
   flex-grow: 1;
