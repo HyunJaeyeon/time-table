@@ -6,14 +6,13 @@ import Select from '@components/Select';
 import { MOCK_API_PATH } from '@constants/api';
 import PLACEHOLDER from '@constants/placeholder';
 import { THEME } from '@styles/index';
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 const FirstPage = () => {
-  const [showCreditInputPage, setshowCreditInputPage] = useState(true);
-  const handleNextButtonClick = () => {
-    setshowCreditInputPage(true);
-  };
+  const navigate = useNavigate();
+  const handleNextButtonClick = () => navigate('/credit');
   const inputRef = useRef<HTMLInputElement>(null);
   const handleMajorSelect = (value: string) => {
     if (inputRef.current) inputRef.current.value = value;

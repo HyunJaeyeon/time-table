@@ -96,11 +96,16 @@ interface StyledButtonProps {
 
 const Button = (props: ButtonProps) => {
   const { button } = props;
-  const { children, backgroundColor, width, color } = button;
+  const { children, backgroundColor, width, color, onClick } = button;
 
   return (
     <ButtonContainer width={width}>
-      <StyledButton boxColor={backgroundColor} color={color} width={width}>
+      <StyledButton
+        boxColor={backgroundColor}
+        color={color}
+        width={width}
+        onClick={onClick}
+      >
         {children}
       </StyledButton>
       <Shadow width={width}></Shadow>
