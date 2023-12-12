@@ -1,13 +1,32 @@
-import Ballon from '@components/Ballon';
 import Button from '@components/Button';
-import Credits from '@components/Credits';
 import OptionBar from '@components/OptionBar';
-import PageHeader from '@components/PageHeader';
 import TimeTable from '@components/TimeTable';
 import { THEME } from '@styles/index';
+import { saveAs } from 'file-saver';
+import html2canvas from 'html2canvas';
+import { useRef } from 'react';
 import styled from 'styled-components';
 
 const SavePage = () => {
+  const divRef = useRef<HTMLDivElement>(null);
+
+  const handleDownload = async () => {
+    if (!divRef.current) return;
+
+    try {
+      const div = divRef.current;
+      const canvas = await html2canvas(div, { scale: 2 });
+      canvas.toBlob((blob) => {
+        if (blob !== null) {
+          saveAs(blob, 'result.png');
+          console.log('저장');
+        }
+      });
+    } catch (error) {
+      console.error('Error converting div to image:', error);
+    }
+  };
+
   return (
     <MainWrapper>
       <NoticeBox>
@@ -17,7 +36,7 @@ const SavePage = () => {
       <StyledOption>
         <OptionBar></OptionBar>
       </StyledOption>
-      <StyledTimeTable>
+      <StyledTimeTable ref={divRef}>
         <TimeTable></TimeTable>
       </StyledTimeTable>
 
@@ -30,14 +49,17 @@ const SavePage = () => {
             width: '70px', // 버튼 너비
           }}
         ></Button>
-        <Button
-          button={{
-            children: '저장',
-            backgroundColor: '#333', // 배경색
-            color: THEME.BUTTON.WHITE, // 글자색
-            width: '155px',
-          }}
-        ></Button>
+        <div onClick={handleDownload}>
+          <Button
+            button={{
+              children: '저장',
+              backgroundColor: '#333', // 배경색
+              color: THEME.BUTTON.WHITE, // 글자색
+              width: '155px',
+            }}
+          ></Button>
+        </div>
+
         <Button
           button={{
             children: '다음',
