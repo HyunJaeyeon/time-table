@@ -3,9 +3,13 @@ import Button from '@components/Button';
 import Credits from '@components/Credits';
 import PageHeader from '@components/PageHeader';
 import { THEME } from '@styles/index';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 const CreditInputPage = () => {
+  const navigate = useNavigate();
+  const handlePreviousButtonClick = () => navigate(-1);
+  const handleNextButtonClick = () => navigate('/subject');
   return (
     <MainWrapper>
       <PageHeader totalPages={4} currentPage={2}></PageHeader>
@@ -29,6 +33,7 @@ const CreditInputPage = () => {
             backgroundColor: THEME.BUTTON.WHITE, // 배경색
             color: THEME.BUTTON.BLACK, // 글자색
             width: '156px', // 버튼 너비
+            onClick: handlePreviousButtonClick,
           }}
         ></Button>
         <Button
@@ -37,6 +42,7 @@ const CreditInputPage = () => {
             backgroundColor: THEME.BUTTON.BROWN, // 배경색
             color: THEME.BUTTON.WHITE, // 글자색
             width: '156px', // 버튼 너비
+            onClick: handleNextButtonClick,
           }}
         ></Button>
       </ButtonWrapper>

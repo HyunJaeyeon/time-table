@@ -1,15 +1,15 @@
 import Ballon from '@components/Ballon';
 import Button from '@components/Button';
-import { ComboBox } from '@components/index';
 import PageHeader from '@components/PageHeader';
 import SubSelect from '@components/Select/subjectSelect';
-import { MOCK_API_PATH } from '@constants/api';
-import PLACEHOLDER from '@constants/placeholder';
 import { THEME } from '@styles/index';
-import { useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 const SubjectPage = () => {
+  const navigate = useNavigate();
+  const handlePreviousButtonClick = () => navigate(-1);
+  const handleNextButtonClick = () => navigate('/no-time');
   return (
     <MainWrapper>
       <PageHeader totalPages={4} currentPage={3}></PageHeader>
@@ -31,6 +31,7 @@ const SubjectPage = () => {
             backgroundColor: THEME.BUTTON.WHITE, // 배경색
             color: THEME.BUTTON.BLACK, // 글자색
             width: '156px', // 버튼 너비
+            onClick: handlePreviousButtonClick,
           }}
         ></Button>
         <Button
@@ -39,6 +40,7 @@ const SubjectPage = () => {
             backgroundColor: THEME.BUTTON.BROWN, // 배경색
             color: THEME.BUTTON.WHITE, // 글자색
             width: '156px', // 버튼 너비
+            onClick: handleNextButtonClick,
           }}
         ></Button>
       </ButtonWrapper>

@@ -1,12 +1,14 @@
-import Ballon from '@components/Ballon';
 import Button from '@components/Button';
-import Credits from '@components/Credits';
 import PageHeader from '@components/PageHeader';
 import TimeChecker from '@components/TimeChecker';
 import { THEME } from '@styles/index';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 const FourthPage = () => {
+  const navigate = useNavigate();
+  const handlePreviousButtonClick = () => navigate(-1);
+  const handleNextButtonClick = () => navigate('/time-table');
   return (
     <MainWrapper>
       <PageHeader totalPages={4} currentPage={4}></PageHeader>
@@ -26,6 +28,7 @@ const FourthPage = () => {
             backgroundColor: THEME.BUTTON.WHITE, // 배경색
             color: THEME.BUTTON.BLACK, // 글자색
             width: '156px', // 버튼 너비
+            onClick: handlePreviousButtonClick,
           }}
         ></Button>
         <Button
@@ -34,6 +37,7 @@ const FourthPage = () => {
             backgroundColor: THEME.BUTTON.BROWN, // 배경색
             color: THEME.BUTTON.WHITE, // 글자색
             width: '156px', // 버튼 너비
+            onClick: handleNextButtonClick,
           }}
         ></Button>
       </ButtonWrapper>
