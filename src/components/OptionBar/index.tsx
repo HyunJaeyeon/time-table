@@ -26,14 +26,9 @@ const OptionBar = () => {
   );
 };
 
-const OptionBarContainer = styled.div`
-  overflow-x: auto;
-  max-width: 100%;
-`;
+const OptionBarContainer = styled.div``;
 const OptionBarContent = styled.div`
   display: flex;
-  flex-wrap: nowrap;
-  padding: 10px;
 `;
 
 export default OptionBar;
