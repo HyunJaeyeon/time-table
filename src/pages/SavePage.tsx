@@ -3,6 +3,7 @@ import Button from '@components/Button';
 import Credits from '@components/Credits';
 import OptionBar from '@components/OptionBar';
 import PageHeader from '@components/PageHeader';
+import TimeTable from '@components/TimeTable';
 import { THEME } from '@styles/index';
 import styled from 'styled-components';
 
@@ -16,6 +17,9 @@ const SavePage = () => {
       <StyledOption>
         <OptionBar></OptionBar>
       </StyledOption>
+      <StyledTimeTable>
+        <TimeTable></TimeTable>
+      </StyledTimeTable>
 
       <ButtonWrapper>
         <Button
@@ -50,7 +54,7 @@ const SavePage = () => {
 const NoticeBox = styled.div`
   font-weight: bold;
   position: relative;
-  top: 80px;
+  top: 50px;
   right: 80px;
   display: flex;
   color: white;
@@ -72,14 +76,18 @@ const MainWrapper = styled.div`
 `;
 const StyledOption = styled.div`
   position: relative;
-  top: 100px;
+  top: 60px;
+`;
+const StyledTimeTable = styled.div`
+  position: relative;
+  top: 70px;
 `;
 const ButtonWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   width: 333px;
-  position: absolute;
-  top: 700px;
+  position: relative;
+  top: 100px;
 `;
 
 export default SavePage;

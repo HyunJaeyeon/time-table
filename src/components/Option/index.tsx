@@ -9,8 +9,10 @@ interface PageProps {
 function Option({ option, detail, onClick }: PageProps) {
   return (
     <Container onClick={onClick}>
-      {option}
-      <p>{detail}</p>
+      <SBox>
+        {option}
+        <p>{detail}</p>
+      </SBox>
     </Container>
   );
 }
@@ -19,7 +21,6 @@ export default Option;
 
 const Container = styled.div`
   border: 2px solid #191919;
-  display: inline-block;
   padding: 4px;
   text-align: center;
   font-family: Noto Sans KR;
@@ -27,10 +28,12 @@ const Container = styled.div`
   margin: 2px;
   background-color: #333;
   color: white;
-  display: flex;
   font-weight: 700;
   p {
     color: #fb0;
-    margin-left: 0.5px;
+    margin-left: 2px;
   }
+`;
+const SBox = styled.div`
+  display: flex;
 `;
